@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 配置常量 -->
+	<!-- 字符集 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 主题 -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- 扩展名 -->
+	<constant name="struts.action.extension" value="action"></constant>
+
+	<package name="bill" namespace="/" extends="struts-default">
+		<action name="BillAction_*" class="com.rjxy.action.BillAction"
+			method="{1}">
+			<result name="yes">admin_bill_list.jsp</result>
+			</action>
+	</package>
+
+	<package name="supplier" namespace="/" extends="struts-default">
+		<action name="SupplierAction_*" class="com.rjxy.action.SupplierAction"
+			method="{1}"></action>
+
+	</package>
+
+	<package name="Users" namespace="/" extends="struts-default">
+		<action name="UsersAction_*" class="com.rjxy.action.UserAction"
+			method="{1}">
+			<result name="yes">/admin_index.jsp</result>
+			<result name="no">/login.jsp</result>
+		</action>
+	</package>
+
+
+
+</struts>
